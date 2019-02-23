@@ -2,19 +2,6 @@
 #include <stdlib.h>
 
 /*
- * Function to print an array of integers
- */
-void print_array(int* array, int size)
-{
-        int i;
-
-        for (i=0; i < size; ++i) {
-                printf("%d ", array[i]);
-        }
-        printf("\n");
-}
-
-/*
  * A function that is never called!
  */
 void not_used(void)
@@ -23,20 +10,37 @@ void not_used(void)
         exit(1);
 }
 
-int main()
+/*
+ * Function to read an array and return the product of
+ * all the elements in the array.
+ */
+int serial_mult(void)
 {
         int a[5];
         int size;
         int i;
+        int ret;
 
         printf("Enter array size\n");
-        (void)scanf("%d", &size);
+        scanf("%d", &size);
 
+        printf("Enter array the array\n");
         for (i=0; i < size; ++i) {
-                (void)scanf("%d", &a[i]);
+                scanf("%d", &a[i]);
         }
 
-        print_array(a, size);
+        ret = 1;
+        for (i=0; i < size; ++i) {
+                ret *= a[i];
+        }
+        return ret;
+}
 
+int main()
+{
+        int prod;
+
+        prod = serial_mult();
+        printf("Product: %d\n", prod);
         return 0;
 }
