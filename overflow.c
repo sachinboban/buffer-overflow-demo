@@ -14,19 +14,19 @@ void not_used(void)
  * Function to read an array and return the product of
  * all the elements in the array.
  */
-int serial_mult(void)
+long serial_mult(void)
 {
-        int a[5];
+        long a[5];
         int size;
         int i;
-        int ret;
+        long ret;
 
         printf("Enter array size\n");
         scanf("%d", &size);
 
         printf("Enter array the array\n");
         for (i=0; i < size; ++i) {
-                scanf("%d", &a[i]);
+                scanf("%ld", &a[i]);
         }
 
         ret = 1;
@@ -38,9 +38,9 @@ int serial_mult(void)
 
 int main()
 {
-        int prod;
+        long prod;
 
         prod = serial_mult();
-        printf("Product: %d\n", prod);
+        printf("Product: %ld\n", prod);
         return 0;
 }
